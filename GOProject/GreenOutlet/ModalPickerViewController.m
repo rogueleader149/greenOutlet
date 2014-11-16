@@ -20,10 +20,13 @@
     [super viewDidLoad];
         
         // Initialize Data
-        _pickerData = @[@"Manual Mode", @"Sensor Mode", @"Algorithim Mode"];
-    self.picker.dataSource = self;
-    self.picker.delegate = self;
-    }
+    self.modeMod = [[ModePickerOptions alloc] init];
+    
+    [self.modeSelector setDelegate:self];
+    [self.modeSelector setDataSource:self];
+    
+    [self.selectedLabel setText:@WELCOME_S];
+}
 
 
 - (IBAction) dismissPickerView
@@ -46,15 +49,19 @@
 // The number of rows of data
 - (int)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    return _pickerData.count;
+    return NUM_OPTIONS;
 }
 
 // The data to return for the row and component (column) that's being passed in
 - (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    return _pickerData[row];
+    return [self.modeMod.modeArray objectAtIndex:row];
 }
 
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row   inComponent:(NSInteger)component
+{
+    [self.selectedLabel setText:[self.modeMod.modeArray objectAtIndex:row]];
+}
 
 /*
 #pragma mark - Navigation

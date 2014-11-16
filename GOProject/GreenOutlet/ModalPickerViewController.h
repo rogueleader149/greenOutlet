@@ -17,7 +17,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *selectedLabel;
 @property (weak, nonatomic) IBOutlet UIPickerView *modeSelector;
-@property (strong) ModePickerOptions *salMod;
+@property (strong) ModePickerOptions *modeMod;
 
 
 

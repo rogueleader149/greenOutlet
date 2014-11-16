@@ -158,23 +158,36 @@
                                     <action selector="dismissPickerView" destination="gug-KN-1oj" eventType="touchUpInside" id="PFg-q8-jvu"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a Device Mode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w48-Px-7qf">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="293" y="99" width="214" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="LHO-jc-3lb"/>
                                 <exclude reference="jgY-74-3vY"/>
+                                <exclude reference="w48-Px-7qf"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="subviews">
                                 <include reference="LHO-jc-3lb"/>
                                 <include reference="jgY-74-3vY"/>
+                                <include reference="w48-Px-7qf"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="modeSelector" destination="LHO-jc-3lb" id="kC7-d8-CLk"/>
                         <outlet property="picker" destination="LHO-jc-3lb" id="5IU-b3-bHw"/>
+                        <outlet property="selectedLabel" destination="w48-Px-7qf" id="4nN-6a-ReH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WRI-Ls-c4p" userLabel="First Responder" sceneMemberID="firstResponder"/>
